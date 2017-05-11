@@ -46,20 +46,6 @@ class ilGetObjectTitleByRefIdSoapMethod extends ilAbstractSoapMethod {
 	/**
 	 * @inheritdoc
 	 */
-	public function getServiceStyle() {
-		return 'rpc';
-	}
-
-	/**
-	 * @inheritdoc
-	 */
-	public function getServiceUse() {
-		return 'encoded';
-	}
-
-	/**
-	 * @inheritdoc
-	 */
 	public function getDocumentation() {
 		return "Returns the title of an object by the given Ref-ID - just for demo purposes!";
 	}
