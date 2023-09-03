@@ -1,0 +1,19 @@
+{
+  "name": "ilias/testsoaphook",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Jephte Abijuru",
+      "email": "jephte.abijuru@minervis.com"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "classmap": [
+      "classes"
+    ]
+  }
+}

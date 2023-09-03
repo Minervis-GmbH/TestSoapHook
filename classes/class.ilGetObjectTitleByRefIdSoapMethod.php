@@ -1,5 +1,4 @@
 <?php
-require_once('./Services/WebServices/SOAP/classes/class.ilAbstractSoapMethod.php');
 
 /**
  * Class ilTestSoapHookPlugin
@@ -13,14 +12,16 @@ class ilGetObjectTitleByRefIdSoapMethod extends ilAbstractSoapMethod {
 	/**
 	 * @inheritdoc
 	 */
-	public function getName() {
+	public function getName() : string
+    {
 		return 'getObjectTitleByRefId';
 	}
 
 	/**
 	 * @inheritdoc
 	 */
-	public function getInputParams() {
+	public function getInputParams() : array
+    {
 		return array(
 			'sid' => 'xsd:string',
 			'ref_id' => 'xsd:int',
@@ -30,7 +31,8 @@ class ilGetObjectTitleByRefIdSoapMethod extends ilAbstractSoapMethod {
 	/**
 	 * @inheritdoc
 	 */
-	public function getOutputParams() {
+	public function getOutputParams() : array
+    {
 		return array(
 			'title' => 'xsd:string',
 		);
@@ -39,21 +41,24 @@ class ilGetObjectTitleByRefIdSoapMethod extends ilAbstractSoapMethod {
 	/**
 	 * @inheritdoc
 	 */
-	public function getServiceNamespace() {
+	public function getServiceNamespace() : string
+    {
 		return 'urn:sample';
 	}
 
 	/**
 	 * @inheritdoc
 	 */
-	public function getDocumentation() {
+	public function getDocumentation() : string
+    {
 		return "Returns the title of an object by the given Ref-ID - just for demo purposes!";
 	}
 
 	/**
 	 * @inheritdoc
 	 */
-	public function execute(array $params) {
+	public function execute(array $params)
+    {
 		$this->checkParameters($params);
 		$session_id = (isset($params[0])) ? $params[0] : '';
 		$ref_id = (isset($params[1])) ? (int)$params[1] : 0;

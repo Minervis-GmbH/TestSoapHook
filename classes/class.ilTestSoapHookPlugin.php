@@ -1,9 +1,7 @@
 <?php
-require_once('./Services/WebServices/SOAP/classes/class.ilSoapHookPlugin.php');
-require_once(__DIR__ . '/class.ilGetObjectTitleByRefIdSoapMethod.php');
 
 /**
- * /**
+ *
  * Class ilTestSoapHookPlugin
  *
  * Example plugin for the Soap plugin slot.
@@ -17,14 +15,16 @@ require_once(__DIR__ . '/class.ilGetObjectTitleByRefIdSoapMethod.php');
 class ilTestSoapHookPlugin extends ilSoapHookPlugin {
 
 
-	public function getPluginName() {
+	public function getPluginName() : string
+    {
 		return 'TestSoapHook';
 	}
 
 	/**
 	 * @inheritdoc
 	 */
-	public function getSoapMethods() {
+	public function getSoapMethods() : array
+    {
 		return array(
 			new ilGetObjectTitleByRefIdSoapMethod()
 		);
@@ -33,7 +33,8 @@ class ilTestSoapHookPlugin extends ilSoapHookPlugin {
 	/**
 	 * @inheritdoc
 	 */
-	public function getWsdlTypes() {
+	public function getWsdlTypes() : array
+    {
 		return array();
 	}
 }
